@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="webformTMDT_DoAn.adminpage.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <link href="~/css\adminpageMaster.css" rel="stylesheet" />
+  
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="form1" runat="server">
+      
+         
+        <div class="navbar">
+            <a href="\adminpage\danhmuc.aspx">QUẢN LÝ DANH MỤC</a>
+            <a href="\adminpage\thietbi.aspx">QUẢN LÝ THIẾT BỊ</a>
+            <a href="\adminpage\dathang.aspx">QUẢN LÝ ĐẶT HÀNG</a>
+            <a href="\adminpage\khachhang.aspx">QUẢN LÝ KHÁCH</a>
+            <a href="\adminpage\lienhekhachhang.aspx">LIÊN HỆ KHÁCH HÀNG</a> 
+        
+              
+                    
+                   <h3> <a href="\adminpage\loginAdmin.aspx">LOGIN</a>  </h3>
+                    <h3>
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">LOGOUT</asp:LinkButton> 
+                    </h3>   
+               
+
+            <!-- Add more navigation links as needed -->
+        </div>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    
+ 
+
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+                           </asp:ContentPlaceHolder>
+       
+      
+    </form>
+</body>
+</html>

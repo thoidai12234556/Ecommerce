@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+namespace webformTMDT_DoAn.homepage
+{
+    public partial class login : System.Web.UI.Page
+    {
+        LOPKETNOI ketnoi = new LOPKETNOI();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+       
+
+        protected void Login1_Click(object sender, EventArgs e)
+        {
+            string user = txtUsername.Text;
+            string pass = txtPassword.Text;
+
+            string sql = "select * from KHACHHANG where TENKHACHHANG='" + user + " ' " +
+                "           and MATKHAU='" + pass + "' ";
+            DataTable dt = ketnoi.laydulieu(sql);
+
+            if (dt.Rows.Count > 0)
+            {
+                Session["username"] = user;
+                Response.Redirect("default.aspx");
+            }
+            else
+            {
+                lblMessage.Text = "tên và mật khẩu không đúng";
+            }
+
+        }
+    }
+}
